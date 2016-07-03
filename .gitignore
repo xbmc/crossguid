@@ -38,3 +38,4 @@ local.properties
 *.launch
 .cproject
 .buildpath
+build/
