@@ -20,6 +20,11 @@ target_include_directories(
   $<INSTALL_INTERFACE:include>
 )
 
+target_compile_definitions(
+  crossguid PUBLIC
+  GUID_WINDOWS
+)
+
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
   ${CMAKE_CURRENT_BINARY_DIR}/crossguid-config-version.cmake
