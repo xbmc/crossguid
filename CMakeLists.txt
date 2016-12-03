@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(crossguid LANGUAGES CXX)
-
-set(crossguid_VERSION 0.1)
+project(crossguid VERSION 0.1 LANGUAGES CXX)
+set(CPACK_PACKAGE_FILE_NAME ${PROJECT_NAME}-${PROJECT_VERSION}-${CMAKE_SYSTEM_NAME}-${CMAKE_BUILD_TYPE})
+include(CPack)
 
 if(MSVC)
   set(CMAKE_DEBUG_POSTFIX "d")
@@ -27,8 +27,8 @@ target_compile_definitions(
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/crossguid-config-version.cmake
-  VERSION ${crossguid_VERSION}
+  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
+  VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion
 )
 
